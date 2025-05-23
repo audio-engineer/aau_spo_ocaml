@@ -1,0 +1,3 @@
+(executable
+ (public_name mini_c)
+ (name interpreter))

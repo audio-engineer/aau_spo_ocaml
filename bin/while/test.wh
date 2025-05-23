@@ -1,0 +1,43 @@
+
+print("Simple loop printing numbers from 1 to 6:")
+
+
+# Program 1: simple loop printing numbers from 1 to 6.
+i = 1
+while i < 6:
+  print(i)
+  i += 1
+print()
+
+# Program 2: computing the factorial of 6.
+
+i = 1
+r = 1
+while i <= 6:
+  r = i * r
+  i += 1
+print("Computing factorial of 6 =", r)
+print()
+
+# Program 3: computing the 10-th fibonacci number.
+a = 0
+b = 1
+i = 0
+while i < 10:
+  t = b
+  b = a + b
+  a = t
+  i += 1
+print("Computing fibonacci of 10 =", a)
+print()
+
+
+# Program 4: checking whether a year is leap (i.e. there is February 29).
+
+year = 1900
+
+is_leap = (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
+if is_leap:
+   print(year, "is_leap")
+else:
+   print(year, "is not leap")

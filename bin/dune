@@ -1,0 +1,28 @@
+(executable
+ (public_name aau_spo_ocaml)
+ (name main))
+
+(executable
+ (public_name music)
+ (name music)
+ (libraries unix)
+ (flags
+  (:standard -w -32-37)))
+
+(executable
+ (public_name monte_carlo)
+ (name monte_carlo))
+
+(executable
+ (public_name cardioid)
+ (name cardioid)
+ (libraries graphics))
+
+(executable
+ (public_name mandelbrot)
+ (name mandelbrot)
+ (libraries graphics))
+
+(executable
+ (public_name sieve)
+ (name sieve))
