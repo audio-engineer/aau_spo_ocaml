@@ -1,0 +1,4 @@
+$$$assign
+int m() { int x; int y; y = x = 0; }
+$$$bool
+int m() { return 1==2 && 3==4 || !(5>=6); }

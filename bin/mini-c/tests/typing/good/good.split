@@ -1,0 +1,30 @@
+$$$subtype
+int main() {
+  int x;
+  x = 'a';
+}
+$
+struct S { int a; };
+int main() {
+  struct S *s;
+  s = 0;
+}
+$$$unique
+int main() {
+  int x;
+  if (1) { int x; }
+}
+$$$recursive
+struct S {
+  int i;
+  struct S *b;
+};
+
+int main() {
+  struct S *s;
+  s->i = 0;
+  s->b = s;
+}
+$$$scope
+struct S { int a; };
+int main() { int x; { struct S *x; x->a = 42; } x = 1; }

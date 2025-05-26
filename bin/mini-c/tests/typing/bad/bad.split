@@ -1,0 +1,123 @@
+$$$undef_var
+int main() { x; }
+$
+int main() { int x; }
+int n() { x; }
+$
+int f(int x) { }
+int main() { x; }
+
+$$$scope
+int main() { { int x; } x; }
+$
+int main() { int x; if(x) { int y; } else y; }
+$
+struct S { int a; };
+int main() { int x; { struct S *x; x = 1; } }
+
+$$$undef_struct
+struct A* f() { return 0; }
+int main() { return 0; }
+$
+int f(struct A *s) { return 0; }
+int main() { return 0; }
+$
+int main(){ struct B *a; return 0; }
+$
+struct A { struct B *b; };
+int main(){ return 0; }
+
+$$$undef_field
+struct S {
+  int a;
+};
+
+int main() {
+  struct S* p;
+  p->b = 1;
+}
+
+$$$undef_fun
+int main() {
+  f(1);
+}
+$
+int f(){ g(); return 0; }
+int g(){ return 0; }
+int main() { f(); g(); return 0; }
+
+$$$arrow
+int main() { 1->a; }
+$
+int main() { int x; x->a; }
+$
+struct S { int a; };
+int main() { int x; x->a; }
+$
+struct S { int a; };
+int foo() {}
+int main() { (foo())->a; }
+
+$$$unary_minus
+struct S { int a; };
+int main() { struct S *s; -s; }
+
+$$$arith
+struct S { int a; };
+int main() { struct S *s; s+s; }
+$
+struct S { int a; };
+int main() { struct S *p; 1-p; }
+$
+struct S { int a; };
+int main() { int p; struct S *q; putchar(p-q); }
+
+$$$call
+int f(int x) {}
+int main() { f(); }
+$
+int f(int x) {}
+int main() { f(1, 2); }
+
+$$$redef
+struct S { int a; };
+struct S { int a; };
+$
+int main() {}
+int main() {}
+$
+int main() { int x, x; }
+$
+struct S { int a; int a; };
+int main() {}
+$
+int f() {}
+int f(int x) {}
+int main() {}
+$
+struct S { int a; };
+int f() {}
+struct S* f() {}
+int main() {}
+$
+int f(int x, int y, int x) {
+  return 0;
+}
+int main() {
+  f(1, 2, 3);
+}
+$
+struct S {
+  int a;
+};
+
+int main() {
+  int x;
+  struct S* x;
+}
+$$$missing_main
+int f() {
+  return 0;
+}
+$$$
+// nothing

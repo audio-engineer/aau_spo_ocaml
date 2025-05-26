@@ -1,0 +1,13 @@
+(ocamllex
+ (modules lexer))
+
+(menhir
+ (modules parser)
+ (flags --explain --dump)
+ (infer true))
+
+(executable
+ (name minic)
+ (promote (until-clean))
+ (flags ())
+ (modules_without_implementation ptree ttree))
